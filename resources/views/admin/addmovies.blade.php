@@ -16,7 +16,7 @@
 
         form{
             border: 5px double red;
-            background-color: white;
+            background-color: rgb(218, 218, 218);
             color: black;
             margin-left: auto;
             margin-right: auto;
