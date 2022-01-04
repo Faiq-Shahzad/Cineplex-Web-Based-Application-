@@ -34,6 +34,6 @@ class MovieController extends Controller
 
         $movie->save();
 
-        return redirect('/viewMovies');
+        return redirect('/admin/viewMovies');
     }
 }

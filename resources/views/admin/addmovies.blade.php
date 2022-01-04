@@ -29,7 +29,7 @@
     
 
     
-	<form enctype="multipart/form-data" action="{{ url('/addMovies') }}" method="POST">
+	<form enctype="multipart/form-data" action="{{ url('/admin/addMovies') }}" method="POST">
         @csrf
 
     <!-- ----------------------------------- ADD MOVIE FORM ----------------------------------- -->
