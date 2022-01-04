@@ -25,7 +25,8 @@
 
             body{
                 font-family: "century gothic";
-                background-color: rgb(31, 27, 27);
+                /* background-color: rgb(31, 27, 27); */
+                background-color: rgb(78, 62, 62); 
             }
 
             .navbar{
