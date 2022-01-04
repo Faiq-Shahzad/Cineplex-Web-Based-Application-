@@ -11,6 +11,10 @@
             color: red;
         }
 
+        th{
+            background-color: rgb(219, 25, 51) !important; 
+        }
+
         img{
             max-width: 100px;
             max-height: 100px;
