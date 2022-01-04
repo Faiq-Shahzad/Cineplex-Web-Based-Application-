@@ -1,5 +1,9 @@
 @extends('layouts.adminlayout')
 
+<head>
+    <title>Admin - Add Movies</title>
+</head>
+
 <style>
     @media(max-width: 1600px){
         h1{

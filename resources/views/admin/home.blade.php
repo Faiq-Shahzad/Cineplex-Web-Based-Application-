@@ -1,5 +1,10 @@
 @extends('layouts.adminlayout')
 
+<head>
+    <title>Admin - Home</title>
+</head>
+
+
 <style>
     .alert{
         width: 25%;
