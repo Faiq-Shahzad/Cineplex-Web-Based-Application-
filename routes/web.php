@@ -36,9 +36,9 @@ Route::middleware(['auth', 'chkAdmin'])-> group(function(){
         return view('admin.addMovies');
     });
 
-    Route::get('/admin/editMovies', function(){
-        return view('admin.editMovies');
-    });
+    // Route::get('/admin/editMovies', function(){
+    //     return view('admin.editMovies');
+    // });
 
 });
 

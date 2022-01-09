@@ -82,7 +82,7 @@
                     <td>{{ $movie->ratings }}</td>
                     <td>{{ $movie->year }}</td>
                     <td><img src="{{ asset('covers/'.$movie->movie_cover) }}" alt=""></td>
-                    <td><a href="/admin/editMovies"><i class="fas fa-edit"></i></a>&emsp;<a href="/admin/viewMovies"><i class="fas fa-trash-alt"></i></a></td>
+                    <td><a href="/movie/{{$movie->id}}/edit"><i class="fas fa-edit"></i></a>&emsp;<a href="/admin/viewMovies"><i class="fas fa-trash-alt"></i></a></td>
             @endforeach
         </tbody>
     </table>

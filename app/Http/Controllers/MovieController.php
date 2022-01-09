@@ -36,4 +36,32 @@ class MovieController extends Controller
 
         return redirect('/admin/viewMovies');
     }
+
+    public function edit($id){
+
+        $movie = Movies::find($id);
+
+        return view('admin.editMovies', compact('movie'));
+
+        // if ($request->hasFile('movie_cover')){
+        //     $file = $request->file('movie_cover');
+        //     $extension = $file->getClientOriginalExtension();
+        //     $filename = time().'.'.$extension;
+        //     $movie->movie_cover = $filename;
+        //     $file->move('covers/', $filename);
+        // }else{
+        //     $movie->movie_cover = 'defaultImg.jpg';
+        // }
+
+        // $movie->movie_name = $request->input('movie_name');
+        // $movie->movie_description = $request->input('movie_description');
+        // $movie->ratings = $request->input('ratings');
+        // $movie->year = $request->input('year');
+
+        // $movie->save();
+
+        // return redirect('/admin/viewMovies');
+
+
+    }
 }
