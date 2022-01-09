@@ -176,6 +176,8 @@
 
 
 
+    <br><br><br><br>
+
     <div id="child_content">
         @yield('content')
     </div>
