@@ -88,7 +88,12 @@
                 <tr>
                     <td>{{ $review->id }}</td>
                     <td>{{ $review->user_id }}</td>
-                    <td>{{ $movie->movie_name }}</td>
+                    @foreach ($movie as $m)
+                        @if ($review->movie_id === $m->id)
+                            <td>{{ $m->movie_name }}</td>
+                        @endif    
+                    @endforeach
+                    
                     <td>{{ $review->movie_review }}</td>
             @endforeach
         </tbody>
