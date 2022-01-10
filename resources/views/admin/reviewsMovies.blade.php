@@ -79,6 +79,7 @@
         <tr class="text-center">
             <th scope="col">ID</th>
             <th scope="col">User ID</th>
+            <th scope="col">Movie Name</th>
             <th scope="col">Review</th>
         </tr>
         </thead>
@@ -87,6 +88,7 @@
                 <tr>
                     <td>{{ $review->id }}</td>
                     <td>{{ $review->user_id }}</td>
+                    <td>{{ $movie->movie_name }}</td>
                     <td>{{ $review->movie_review }}</td>
             @endforeach
         </tbody>

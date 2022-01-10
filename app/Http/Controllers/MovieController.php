@@ -84,7 +84,15 @@ class MovieController extends Controller
 
     public function review($id){
         $reviews = Review::where('movie_id', $id)->get();
+        $movie = Movies::find($id);
 
-        return view('/admin/reviewsMovies', compact('reviews'));
+        return view('/admin/reviewsMovies', compact('reviews', 'movie'));
+    }
+
+    public function allreviews(){
+        $reviews = Review::all();
+        $movie = Movies::all();
+
+        return view('/admin/reviewsMovies', compact('reviews', 'movie'));
     }
 }
