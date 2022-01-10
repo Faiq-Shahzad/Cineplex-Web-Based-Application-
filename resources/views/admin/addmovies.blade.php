@@ -77,11 +77,12 @@
 
 
 		<div class="row form-group">
-			<label class="col-xl-2 col-4 col-form-label" for="img">Cover Picture:</label>
+            <label class="col-xl-2 col-4 col-form-label" for="img">Cover Picture:</label>
 			<div class="col-xl-4 col-3">
 				<input type="file" id="img" class="form-control" name="movie_cover"><br>
 			</div>
 		</div>
+        
 
         <div class="row form-group">
 			<label class="col-xl-2 col-12 col-form-label">Movie Description:</label>				

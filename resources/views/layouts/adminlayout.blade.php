@@ -141,7 +141,7 @@
                         </div>
                     </li>
 
-                    <li class="nav-item"><a class="nav-link" href="/users">Users</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/admin/users">Users</a></li>
                     <li class="nav-item"><a class="nav-link" href="/aboutUs">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="/contactUs">Contact Us</a></li>
 

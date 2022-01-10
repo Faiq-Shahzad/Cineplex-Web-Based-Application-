@@ -15,6 +15,7 @@ class Movies extends Model
         'movie_description',
         'ratings',
         'year',
+        'movie_img',
         'movie_cover',
     ];
 }

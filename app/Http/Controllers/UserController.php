@@ -7,13 +7,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Validation\Rules\Unique;
 
-class MovieController extends Controller
+class UserController extends Controller
 {
     //
 
     public function show(){
         $userlist = User::all();
-        return view('admin.users', compact('userlist'));
+        return view('admin.viewUsers', compact('userlist'));
     }
 
     // public function addMovie(Request $request){
