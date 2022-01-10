@@ -138,6 +138,7 @@
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="/admin/viewMovies">View Movies</a>
                             <a class="dropdown-item" href="/admin/addMovies">Add Movies</a>
+                            <a class="dropdown-item" href="/admin/reviewsMovies">Movies Reviews</a>
                         </div>
                     </li>
 

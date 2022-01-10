@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Movies;
+use App\Models\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Validation\Rules\Unique;
@@ -79,5 +80,11 @@ class MovieController extends Controller
         $movie->delete();
 
         return redirect('/admin/viewMovies')->with('status', 'Movie Deleted Successfully');
+    }
+
+    public function review($id){
+        $reviews = Review::where('movie_id', $id)->get();
+
+        return view('/admin/reviewsMovies', compact('reviews'));
     }
 }

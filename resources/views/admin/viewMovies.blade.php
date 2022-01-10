@@ -99,7 +99,9 @@
                     <td>{{ $movie->ratings }}</td>
                     <td>{{ $movie->year }}</td>
                     <td><img src="{{ asset('covers/'.$movie->movie_cover) }}" alt=""></td>
-                    <td><a href="/admin/{{$movie->id}}/edit"><i class="fas fa-edit"></i></a>&emsp;<a href="/admin/{{$movie->id}}/delete"><i class="fas fa-trash-alt"></i></a></td>
+                    <td><a href="/admin/{{$movie->id}}/edit"><i class="fas fa-edit"></i></a>&emsp;
+                        <a href="/admin/{{$movie->id}}/delete"><i class="fas fa-trash-alt"></i></a>&emsp;
+                        <a href="/admin/{{$movie->id}}/review">Reviews</a></td>
             @endforeach
         </tbody>
     </table>
@@ -119,7 +121,9 @@
                     <td>{{ $movie->id }}</td>
                     <td>{{ $movie->movie_name }}</td>
                     <td><img src="{{ asset('covers/'.$movie->movie_cover) }}" alt=""></td>
-                    <td><a href="/admin/{{$movie->id}}/edit"><i class="fas fa-edit"></i></a>&emsp;<a href="/admin/{{$movie->id}}/delete"><i class="fas fa-trash-alt"></i></a></td>
+                    <td><a href="/admin/{{$movie->id}}/edit"><i class="fas fa-edit"></i></a>&emsp;
+                        <a href="/admin/{{$movie->id}}/delete"><i class="fas fa-trash-alt"></i></a>&emsp;
+                        <a href="/admin/{{$movie->id}}/review">Reviews</a></td>
             @endforeach
         </tbody>
     </table>
