@@ -42,8 +42,6 @@
 
 @section('content')
     
-
-    
 	<form enctype="multipart/form-data" action="{{ url('/admin/addMovies') }}" method="POST">
         @csrf
 

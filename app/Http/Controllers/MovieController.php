@@ -35,7 +35,7 @@ class MovieController extends Controller
 
         $movie->save();
 
-        return redirect('/admin/viewMovies');
+        return redirect('/admin/viewMovies')->with('status', 'Movie Added Successfully');
     }
 
     public function edit($id){
@@ -70,6 +70,6 @@ class MovieController extends Controller
 
         $movie->update();
 
-        return redirect('/admin/viewMovies')->with('success', 'Movie Updated');
+        return redirect('/admin/viewMovies')->with('status', 'Movie Updated Successfully');
     }
 }

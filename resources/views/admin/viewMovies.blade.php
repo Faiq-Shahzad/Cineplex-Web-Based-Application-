@@ -7,6 +7,17 @@
 <style>
 
     @media(max-width: 1600px){
+
+        .alert{
+            width: 25%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 2%;
+            text-align: center;
+            border: 2px solid green !important;
+        }
+
+
         td a{
             color: white;
         }
@@ -60,6 +71,12 @@
 
 @section('content')
 
+    @if (session('status'))
+    <div class="alert alert-success" role="alert">
+        {{ session('status') }}
+    </div>
+    @endif
+
     <h1>Movies</h1>
     <hr>
 
@@ -106,16 +123,12 @@
             @endforeach
         </tbody>
     </table>
-
-    {{-- <div>
-        @php
-            echo $movielist
-        @endphp
-        @foreach ($movielist as $movie)
-            {{ $movie->movie_name }}
-            
-        @endforeach
-    </div> --}}
     
     
 @endsection
+
+<script>
+    setTimeout(function(){
+        $('.alert').slideUp(1500);
+    }, 2000);
+</script>
