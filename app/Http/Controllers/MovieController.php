@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Movies;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Validation\Rules\Unique;
 
 class MovieController extends Controller
@@ -24,7 +25,7 @@ class MovieController extends Controller
             $movie->movie_cover = $filename;
             $file->move('covers/', $filename);
         }else{
-            $movie->movie_cover = 'defaultImg.jpg';
+            $movie->movie_cover = 'defaultImg.png';
         }
 
         $movie->movie_name = $request->input('movie_name');
@@ -42,26 +43,33 @@ class MovieController extends Controller
         $movie = Movies::find($id);
 
         return view('admin.editMovies', compact('movie'));
+    }
 
-        // if ($request->hasFile('movie_cover')){
-        //     $file = $request->file('movie_cover');
-        //     $extension = $file->getClientOriginalExtension();
-        //     $filename = time().'.'.$extension;
-        //     $movie->movie_cover = $filename;
-        //     $file->move('covers/', $filename);
-        // }else{
-        //     $movie->movie_cover = 'defaultImg.jpg';
-        // }
+    public function update(Request $request, $id){
 
-        // $movie->movie_name = $request->input('movie_name');
-        // $movie->movie_description = $request->input('movie_description');
-        // $movie->ratings = $request->input('ratings');
-        // $movie->year = $request->input('year');
+        $movie = Movies::find($id);
+        
+        if ($request->hasFile('movie_cover')){
+            $filepath = 'covers/'.$movie->movie_cover;
 
-        // $movie->save();
+            if (File::exists($filepath) && $movie->movie_cover != 'defaultImg.png'){
+                File::delete($filepath);
+            }
 
-        // return redirect('/admin/viewMovies');
+            $file = $request->file('movie_cover');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extension;
+            $movie->movie_cover = $filename;
+            $file->move('covers/', $filename);
+        }
 
+        $movie->movie_name = $request->input('movie_name');
+        $movie->movie_description = $request->input('movie_description');
+        $movie->ratings = $request->input('ratings');
+        $movie->year = $request->input('year');
 
+        $movie->update();
+
+        return redirect('/admin/viewMovies')->with('success', 'Movie Updated');
     }
 }

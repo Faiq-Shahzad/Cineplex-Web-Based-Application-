@@ -29,8 +29,8 @@
             }
 
             .navbar{
-                background-color: rgb(233, 20, 20);
-                opacity: 0.75;
+                background-color: rgba(233, 20, 20, 0.795);
+                /* opacity: 0.75 !important; */
                 padding-left: .5%;
                 padding-top: 1%;
             }
@@ -57,11 +57,6 @@
                 font-family: 'Shizuru', cursive;      
             }
 
-            /* ul {
-                opacity: 1 !important;
-                font-size: 16px;
-            } */
-
             .nav-link{
                 color: white !important;
             }
@@ -77,7 +72,7 @@
             }
 
             div .dropdown-menu{
-                background-color: rgb(233, 20, 20);
+                background-color: rgba(233, 20, 20, 0.795);
             }
 
             footer a:hover{
@@ -114,7 +109,7 @@
 
     <nav class="navbar navbar-expand-md shadow-sm navbar-dark">
         <div class="container">
-            <a class="navbar-brand logo" href="{{ url('/') }}">
+            <a class="navbar-brand logo" href="{{ url('/home') }}">
                 {{ config('app.name', 'Laravel') }}
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -172,11 +167,6 @@
             </div>
         </div>
     </nav>
-
-
-
-
-    <br><br><br><br>
 
     <div id="child_content">
         @yield('content')

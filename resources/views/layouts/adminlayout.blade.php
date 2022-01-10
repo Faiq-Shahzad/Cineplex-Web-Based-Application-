@@ -30,8 +30,9 @@
             }
 
             .navbar{
-                background-color: rgb(233, 20, 20);
-                opacity: 0.75;
+                /* background-color: rgb(233, 20, 20); */
+                background-color: rgba(233, 20, 20, 0.795);
+                /* opacity: 0.75; */
                 padding-left: .5%;
                 padding-top: 1%;
             }
@@ -73,7 +74,8 @@
             }
 
             .navbar div .dropdown-menu{
-                background-color: rgb(233, 20, 20);
+                /* background-color: rgb(233, 20, 20); */
+                background-color: rgba(233, 20, 20, 0.795);
             }
 
             footer a:hover{
@@ -110,7 +112,7 @@
 
     <nav class="navbar navbar-expand-md shadow-sm navbar-dark">
         <div class="container">
-            <a class="navbar-brand logo" href="{{ url('/') }}">
+            <a class="navbar-brand logo" href="{{ url('/admin/home') }}">
                 {{ config('app.name', 'Laravel') }}
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -126,7 +128,7 @@
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ms-auto">
 
-                    <li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/admin/home">Home</a></li>
 
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

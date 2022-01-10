@@ -40,25 +40,16 @@
     }
 </style>
 
-<script>
-    $(document).ready(function(){
-        document.getElementById("name") = $movie->movie_name;
-        document.getElementById("rating") = $movie->ratings;
-        document.getElementById("year") = $movie->year;
-        document.getElementById("img") = $movie->movie_cover;
-        document.getElementById("description") = $movie->movie_description;
-    }
-
-</script>
-
 @section('content')
     
 
     
-	<form enctype="multipart/form-data" action="{{ url('/admin/updateMovies') }}" method="PUT">
+	<form enctype="multipart/form-data" action="{{ url("/admin/$movie->id/update") }}" method='POST'>
         @csrf
 
-    <!-- ----------------------------------- ADD MOVIE FORM ----------------------------------- -->
+        @method('PUT')
+
+    <!-- ----------------------------------- EDIT MOVIE FORM ----------------------------------- -->
 		<div class="row form-group">
             <div class="col-xl-12">
                 <h1><i class="fas fa-film"></i> Edit Movies</h1>
@@ -70,7 +61,8 @@
 		<div class="row form-group">
 			<label class="col-xl-2 col-4 col-form-label">Movie Name:</label>
 			<div class="col-xl-10 col-8">
-				<input type="text" id="name" class="form-control" name="movie_name" placeholder="Spiderman: Homecoming"><br>
+                
+				<input type="text" id="name" class="form-control" name="movie_name" value= '{{$movie->movie_name}}'><br>
 			</div>
 		</div>
 
@@ -78,30 +70,34 @@
 		<div class="row form-group">
             <label class="col-xl-2 col-2 col-form-label">Ratings:</label>
 			<div class="col-xl-2 col-2">
-				<input type="number" id="ratings" class="form-control" name="ratings" placeholder="9"><br>
+				<input type="number" id="ratings" class="form-control" name="ratings" placeholder="9" value='{{$movie->ratings}}'><br>
 			</div>
 
 
 			<label class="col-xl-2 offset-xl-4 col-4 offset-1 col-form-label">Year of Release:</label>
 			<div class="col-xl-2 col-3">
-				<input type="number" id="year" class="form-control" name="year" placeholder="2021"><br>
+				<input type="number" id="year" class="form-control" name="year" placeholder="2021" value='{{$movie->year}}'><br>
 			</div>
 		</div>
 
 
 		<div class="row form-group">
-			<label class="col-xl-2 col-4 col-form-label" for="img">Cover Picture:</label>
+			<label class="col-xl-2 col-4 col-form-label" for="img">New Cover Picture: (Optional)</label>
 			<div class="col-xl-4 col-3">
 				<input type="file" id="img" class="form-control" name="movie_cover"><br>
 			</div>
+            <label class="col-xl-2 offset-xl-2 col-4 col-form-label" for="img">Current Cover Picture:</label>
+            <div class="col-xl-2 col-3">
+                <img src="{{ asset('covers/'.$movie->movie_cover) }}" alt="" width="100" height="100">
+			</div>
 		</div>
+
+        <br>
 
         <div class="row form-group">
 			<label class="col-xl-2 col-12 col-form-label">Movie Description:</label>				
 			<div class="col-xl-10 col-12">
-                <textarea name="movie_description" id="" cols="30" rows="7" id="description" class="form-control" 
-                placeholder="A young Peter Parker/Spider-Man begins to navigate his newfound identity as the web-slinging super hero Spider-Man. Thrilled by his experience with the Avengers, Peter returns home, where he lives with his Aunt May, under the watchful eye of his new mentor Tony Stark. Peter tries to fall back into his normal daily routine - distracted by thoughts of proving himself to be more than just your friendly neighborhood Spider-Man - but when the Vulture emerges as a new villain, everything that Peter holds most important will be threatened.
-                "></textarea><br>
+                <textarea name="movie_description" id="" cols="30" rows="7" id="description" class="form-control" placeholder="Movie Description">{{$movie->movie_description}}</textarea><br>
 			</div>
 		</div>
 
