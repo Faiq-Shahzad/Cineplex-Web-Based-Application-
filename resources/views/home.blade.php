@@ -59,6 +59,8 @@
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
         </div>
         <div class="carousel-inner">
 
@@ -68,7 +70,7 @@
                 @php (array_push($movie_covers, asset('covers/'.$movie->movie_cover)))
             @endforeach
 
-            @php ($random = array_rand($movie_covers, 3))
+            @php ($random = array_rand($movie_covers, 5))
 
             <div class="carousel-item active">
                 <img src="{{ $movie_covers[$random[0]] }}" class="d-block w-100" alt="...">
@@ -78,6 +80,12 @@
             </div>
             <div class="carousel-item">
                 <img src="{{ $movie_covers[$random[2]] }}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ $movie_covers[$random[3]] }}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ $movie_covers[$random[4]] }}" class="d-block w-100" alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
