@@ -82,11 +82,11 @@
 
 
 		<div class="row form-group">
-			<label class="col-xl-2 col-4 col-form-label" for="img">New Cover Picture: (Optional)</label>
+			<label class="col-xl-2 col-6 col-form-label" for="img">New Cover Picture: (Optional)</label>
 			<div class="col-xl-4 col-3">
 				<input type="file" id="img" class="form-control" name="movie_cover"><br>
 			</div>
-            <label class="col-xl-2 offset-xl-2 col-4 col-form-label" for="img">Current Cover Picture:</label>
+            <label class="col-xl-2 offset-xl-2 col-6 col-form-label" for="img">Current Cover Picture:</label>
             <div class="col-xl-2 col-3">
                 <img src="{{ asset('covers/'.$movie->movie_cover) }}" alt="" width="100" height="100">
 			</div>

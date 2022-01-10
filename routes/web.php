@@ -31,6 +31,7 @@ Route::middleware(['auth', 'chkAdmin'])-> group(function(){
     Route::get('/admin/viewMovies', 'App\Http\Controllers\MovieController@show');
     Route::get('/admin/{id}/edit', 'App\Http\Controllers\MovieController@edit');
     Route::put('/admin/{id}/update', 'App\Http\Controllers\MovieController@update');
+    Route::get('/admin/{id}/delete', 'App\Http\Controllers\MovieController@delete');
     
     Route::post('/admin/addMovies', 'App\Http\Controllers\MovieController@addMovie');
     

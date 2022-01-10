@@ -72,4 +72,12 @@ class MovieController extends Controller
 
         return redirect('/admin/viewMovies')->with('status', 'Movie Updated Successfully');
     }
+
+    public function delete($id){
+        $movie = Movies::find($id);
+        
+        $movie->delete();
+
+        return redirect('/admin/viewMovies')->with('status', 'Movie Deleted Successfully');
+    }
 }
