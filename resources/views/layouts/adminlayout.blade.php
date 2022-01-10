@@ -138,10 +138,10 @@
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="/admin/viewMovies">View Movies</a>
                             <a class="dropdown-item" href="/admin/addMovies">Add Movies</a>
-                            <a class="dropdown-item" href="/admin/reviewsMovies">Movies Reviews</a>
                         </div>
                     </li>
 
+                    <li class="nav-item"><a class="nav-link" href="/users">Users</a></li>
                     <li class="nav-item"><a class="nav-link" href="/aboutUs">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="/contactUs">Contact Us</a></li>
 

@@ -88,11 +88,4 @@ class MovieController extends Controller
 
         return view('/admin/reviewsMovies', compact('reviews', 'movie'));
     }
-
-    public function allreviews(){
-        $reviews = Review::all();
-        $movie = Movies::all();
-
-        return view('/admin/reviewsMovies', compact('reviews', 'movie'));
-    }
 }
