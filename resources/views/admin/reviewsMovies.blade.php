@@ -74,6 +74,8 @@
     <h1>Movies - Reviews</h1>
     <hr>
 
+    <h2>{{ $movie->movie_name }}</h2>
+
     <table class="table table-striped table-hover table-dark" id="pc_table">
         <thead>
         <tr class="text-center">
@@ -88,12 +90,7 @@
                 <tr>
                     <td>{{ $review->id }}</td>
                     <td>{{ $review->user_id }}</td>
-                    @foreach ($movie as $m)
-                        @if ($review->movie_id === $m->id)
-                            <td>{{ $m->movie_name }}</td>
-                        @endif    
-                    @endforeach
-                    
+                    <td></td>
                     <td>{{ $review->movie_review }}</td>
             @endforeach
         </tbody>
