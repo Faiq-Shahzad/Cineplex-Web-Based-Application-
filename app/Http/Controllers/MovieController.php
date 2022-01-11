@@ -88,4 +88,10 @@ class MovieController extends Controller
 
         return view('/admin/reviewsMovies', compact('reviews', 'movie'));
     }
+
+    public function moviedetails($id){
+        $movie = Movies::find($id);
+
+        return view('/detailsMovie', compact('movie'));
+    }
 }

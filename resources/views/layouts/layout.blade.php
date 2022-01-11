@@ -107,7 +107,7 @@
 
     <!-- ----------------------------------- NAVBAR ----------------------------------- -->
 
-    {{-- <nav class="navbar navbar-expand-md shadow-sm navbar-dark">
+    <nav class="navbar navbar-expand-md shadow-sm navbar-dark">
         <div class="container">
             <a class="navbar-brand logo" href="{{ url('/home') }}">
                 {{ config('app.name', 'Laravel') }}
@@ -166,7 +166,7 @@
                 </ul>
             </div>
         </div>
-    </nav> --}}
+    </nav>
 
     <div id="child_content">
         @yield('content')

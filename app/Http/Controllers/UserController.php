@@ -23,25 +23,12 @@ class UserController extends Controller
         return view('profile', compact('user'));
     }
 
-    public function viewabout(){
+    // public function viewabout(){
 
-        $user = Auth::user();
-        return view('admin.aboutUs', compact('user'));
-
-        // if (Auth::check()){
-        //     if (Auth::user()->user_role == '1'){
-    
-        //     }else{
-        //         return redirect('/home')->with('status', 'User accessed about');
-        //     }
-            
-        // }else{
-        //     return redirect('/login')->with('status', 'Please Login');
-        // }
-
-
+    //     $user = Auth::user();
+    //     return view('admin.aboutUs', compact('user'));
         
-    }
+    // }
 
     
 
