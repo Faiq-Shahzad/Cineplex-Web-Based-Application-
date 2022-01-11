@@ -43,7 +43,7 @@
 
 @section('content')
     
-	<form enctype="multipart/form-data" action="{{ url('/admin/$movie->id/addShows') }}" method="POST">
+	<form enctype="multipart/form-data" action="{{ url("/admin/$movie->id/addShows") }}" method="POST">
         @csrf
 
     <!-- ----------------------------------- ADD MOVIE FORM ----------------------------------- -->
@@ -58,7 +58,7 @@
 		<div class="row form-group">
 			<label class="col-xl-2 col-4 col-form-label">Movie Name:</label>
 			<div class="col-xl-10 col-8">
-				<input type="text" id="name" class="form-control" name="movie_name" placeholder="Spiderman: Homecoming"><br>
+				<input type="text" id="name" class="form-control" name="movie_name" value="{{$movie->movie_name}}" placeholder="Spiderman: Homecoming" disabled><br>
 			</div>
 		</div>
 
@@ -86,13 +86,8 @@
 
             <label class="col-xl-1 offset-xl-1 col-4 col-form-label">Time:</label>
 			<div class="col-xl-2 col-5">
-				<input type="time" id="time" class="form-control" name="movie_time"><br>
+				<input type="text" id="time" class="form-control" name="movie_time"><br>
 			</div>
-		</div>
-
-
-		<div class="row form-group">
-            
 		</div>
 
 		<hr>

@@ -13,6 +13,7 @@ class Shows extends Model
     protected $fillable = [
         'movie_id',
         'movie_seats',
-        'movie_dateTime',
+        'show_day',
+        'movie_time',
     ];
 }
