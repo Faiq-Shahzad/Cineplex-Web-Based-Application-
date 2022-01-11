@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Movies;
+use App\Models\Shows;
+
 
 class HomeController extends Controller
 {
@@ -28,8 +30,18 @@ class HomeController extends Controller
         return view('/home', compact('movielist'));
     }
 
+
+
+    //UNDER WORKS-=------START FROM HERE-------------------
+
     public function adminindex(){
-        $movielist = Movies::all();
+        $showlist = Shows::all();
+
+        foreach ($showlist as $show) {
+            $movieID = $show->movie_id;
+            $movielist = Movies::where('id', $movieID)->get();
+        }
+
         return view('/admin/home', compact('movielist'));
     }
 }

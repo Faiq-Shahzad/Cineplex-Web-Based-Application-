@@ -44,7 +44,6 @@
         margin-top: 2% !important;
         color: white;
         text-align: center;
-        /* border-bottom: 1px solid white; */
         font-weight: bold !important;
     }
 
