@@ -56,5 +56,6 @@ Route::get('/aboutUs', function(){
 });
 
 Route::get('/viewMovies/{id}', 'App\Http\Controllers\MovieController@moviedetails');
+Route::post('/viewMovies/{id}/{user_id}', 'App\Http\Controllers\MovieController@addreview');
 
 

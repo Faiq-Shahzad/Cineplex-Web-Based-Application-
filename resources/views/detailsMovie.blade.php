@@ -19,6 +19,10 @@
             font-weight: bold !important;
         }
 
+        h5{
+            font-weight: bold !important;
+        }
+
         .details{
             color: white;
             padding: 2%;
@@ -31,6 +35,19 @@
             object-fit: cover;
             object-position: top;
             /* box-shadow: inset 0px 0px 20px 10px rgba(0, 0, 0, 0.6); */
+        }
+
+        .review{
+            margin-left: auto !important;
+            margin-right: auto !important;
+            width: 50%;
+        }
+
+        button{
+            margin-top: 2% !important;
+            width: 30% !important;
+            margin-left: auto !important;
+            margin-right: auto !important; 
         }
     }
 
@@ -56,8 +73,20 @@
         </ul>
         <h4>Synopsis:</h4>
         <p>{{ $movie->movie_description }}</p>
+
+        <h5>Write a Review (Optional): </h5>
+        
+        <form class="review" action="{{ url("/viewMovies/$movie->id/$user->id") }}" method='POST'>
+            @csrf
+            
+            <div class="row">
+                <textarea name="movie_review" id="" cols="89" rows="5" placeholder="Review...."></textarea><br>
+            </div>
+            <div class="row">
+                <button type="submit" class="btn btn-success">Submit</button> 
+            </div>
+            
+        </form>
     </div>
-
-
     
 @endsection

@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Movies;
 use App\Models\Review;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Validation\Rules\Unique;
+use Illuminate\Support\Facades\Auth;
 
 class MovieController extends Controller
 {
@@ -89,9 +91,19 @@ class MovieController extends Controller
         return view('/admin/reviewsMovies', compact('reviews', 'movie'));
     }
 
+    public function addreview(Request $request, $id, $user_id){
+
+        $review = new Review();
+        $review->movie_id = $id;
+        $review->user_id = $user_id;
+        $review->movie_name = $request->input('movie_review');
+    }
+
     public function moviedetails($id){
         $movie = Movies::find($id);
+        $user = Auth::user();
 
-        return view('/detailsMovie', compact('movie'));
+
+        return view('/detailsMovie', compact('movie', 'user'));
     }
 }
