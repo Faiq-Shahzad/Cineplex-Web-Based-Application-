@@ -102,7 +102,7 @@
                     <td><a href="/admin/{{$movie->id}}/edit"><i class="fas fa-edit"></i></a>&emsp;
                         <a href="/admin/{{$movie->id}}/delete"><i class="fas fa-trash-alt"></i></a>&emsp;
                         <a href="/admin/{{$movie->id}}/review">Reviews</a>
-                        <a href="/admin/{{$movie->id}}/addShow">Screen</a></td>
+                        <a href="/admin/{{$movie->id}}/show">Screen</a></td>
             @endforeach
         </tbody>
     </table>
@@ -125,7 +125,7 @@
                     <td><a href="/admin/{{$movie->id}}/edit"><i class="fas fa-edit"></i></a>&emsp;
                         <a href="/admin/{{$movie->id}}/delete"><i class="fas fa-trash-alt"></i></a>&emsp;
                         <a href="/admin/{{$movie->id}}/review">Reviews</a>&emsp;
-                        <a href="/admin/{{$movie->id}}/addShow">Screen</a>
+                        <a href="/admin/{{$movie->id}}/show">Screen</a>
                     </td>
             @endforeach
         </tbody>

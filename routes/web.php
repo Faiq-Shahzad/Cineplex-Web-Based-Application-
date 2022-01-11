@@ -47,8 +47,8 @@ Route::middleware(['auth', 'chkAdmin'])-> group(function(){
     });
 
 
-    Route::post('/admin/addShows', 'App\Http\Controllers\ShowController@addShow');
-    Route::get('/admin/{id}/addShow', 'App\Http\Controllers\MovieController@addshow');
+    Route::post('/admin/{id}/show', 'App\Http\Controllers\ShowController@addshow');
+    Route::get('/admin/{id}/show', 'App\Http\Controllers\MovieController@movie_show');
     // Route::get('/admin/{id}/addShows', function(){
     //     return view('admin.addShows');
     // });

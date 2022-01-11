@@ -43,7 +43,7 @@
 
 @section('content')
     
-	<form enctype="multipart/form-data" action="{{ url('/admin/addShows') }}" method="POST">
+	<form enctype="multipart/form-data" action="{{ url('/admin/$movie->id/addShows') }}" method="POST">
         @csrf
 
     <!-- ----------------------------------- ADD MOVIE FORM ----------------------------------- -->

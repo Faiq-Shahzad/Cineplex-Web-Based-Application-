@@ -133,6 +133,12 @@ class MovieController extends Controller
         return view('/admin/detailsMovie', compact('movie', 'user'));
     }
 
+    public function movie_show($id){
+
+        $movie = Movies::find($id);
+        return view('admin.addShows', compact('movie'));
+    }
+
     public function addshow(Request $request, $id){
         $show = new Shows();
 
