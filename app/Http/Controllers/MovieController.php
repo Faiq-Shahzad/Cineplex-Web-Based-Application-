@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Movies;
 use App\Models\Review;
+use App\Models\Shows;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -129,7 +130,19 @@ class MovieController extends Controller
         $movie = Movies::find($id);
         $user = Auth::user();
 
-
         return view('/admin/detailsMovie', compact('movie', 'user'));
+    }
+
+    public function addshow(Request $request, $id){
+        $show = new Shows();
+
+        $show->movie_id = $id;
+        $show->movie_seats = $request->input('movie_seats');
+        $show->show_day = $request->input('show_day');
+        $show->movie_time = $request->input('movie_time');
+
+        $show->save();
+
+        return redirect('/admin/viewShows')->with('status', 'Show Added Successfully');
     }
 }

@@ -71,7 +71,9 @@
                 background-color: rgb(53, 48, 48);
                 padding-top: 1%;
                 padding-bottom: 1%;
-                margin-bottom: 0;
+                bottom: 0%;
+                margin-bottom: 0%;
+                
             }
 
             .navbar div .dropdown-menu{
@@ -148,6 +150,17 @@
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="/admin/viewMovies">View Movies</a>
                             <a class="dropdown-item" href="/admin/addMovies">Add Movies</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle {{ Request::is('admin/addShows') ? "active" :"" }} {{ Request::is('admin/viewShows') ? "active" :"" }}" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            Show
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/admin/viewShows">View Shows</a>
+                            <a class="dropdown-item" href="/admin/addShows">Add Shows</a>
                         </div>
                     </li>
 
