@@ -94,9 +94,14 @@ class MovieController extends Controller
     public function addreview(Request $request, $id, $user_id){
 
         $review = new Review();
-        $review->movie_id = $id;
+
         $review->user_id = $user_id;
-        $review->movie_name = $request->input('movie_review');
+        $review->movie_id = $id;
+        $review->movie_review = $request->input('movie_review');
+
+        $review->save();
+
+        return redirect('/home')->with('status', 'Review Added Successfully');
     }
 
     public function moviedetails($id){
