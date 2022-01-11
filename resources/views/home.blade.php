@@ -98,6 +98,29 @@
         </button>
     </div>
 
+    <h1>Random Movies</h1>
+
+    <div class="home_movies container">
+
+        <div class="row">
+            @foreach ($movielist as $item)
+                <div class="card col-xl-3 mx-2 my-2 bg-dark text-white" style="width: 18rem;">
+                    <img src="{{asset('covers/'.$item->movie_cover)}}" class="card-img-top" alt="..." height="150-px">
+                    <div class="card-body">
+                        <h5 class="card-title">{{$item->movie_name}}</h5>
+                        <p class="card-text">{{$item->year}}</p>
+                        <a href="/viewMovies/{{$item->id}}" class="btn btn-primary">details</a>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+
+        
+        
+        
+        
+    </div>
+
 @endsection 
 
 <script>

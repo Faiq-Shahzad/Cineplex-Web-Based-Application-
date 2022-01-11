@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Validation\Rules\Unique;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -15,6 +16,34 @@ class UserController extends Controller
         $userlist = User::all();
         return view('admin.viewUsers', compact('userlist'));
     }
+
+    public function viewprofile($id){
+
+        $user = User::find($id);
+        return view('profile', compact('user'));
+    }
+
+    public function viewabout(){
+
+        $user = Auth::user();
+        return view('admin.aboutUs', compact('user'));
+
+        // if (Auth::check()){
+        //     if (Auth::user()->user_role == '1'){
+    
+        //     }else{
+        //         return redirect('/home')->with('status', 'User accessed about');
+        //     }
+            
+        // }else{
+        //     return redirect('/login')->with('status', 'Please Login');
+        // }
+
+
+        
+    }
+
+    
 
     // public function addMovie(Request $request){
     //     $movie = new Movies();

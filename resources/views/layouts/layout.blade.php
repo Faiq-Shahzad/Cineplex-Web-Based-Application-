@@ -107,7 +107,7 @@
 
     <!-- ----------------------------------- NAVBAR ----------------------------------- -->
 
-    <nav class="navbar navbar-expand-md shadow-sm navbar-dark">
+    {{-- <nav class="navbar navbar-expand-md shadow-sm navbar-dark">
         <div class="container">
             <a class="navbar-brand logo" href="{{ url('/home') }}">
                 {{ config('app.name', 'Laravel') }}
@@ -150,7 +150,7 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/veiwProfile">Profile</a>
+                                <a class="dropdown-item" href="/{{ Auth::user()->id }}/profile">Profile</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
@@ -166,7 +166,7 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> --}}
 
     <div id="child_content">
         @yield('content')

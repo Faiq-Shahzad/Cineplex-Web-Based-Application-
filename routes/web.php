@@ -40,12 +40,19 @@ Route::middleware(['auth', 'chkAdmin'])-> group(function(){
         return view('admin.addMovies');
     });
 
+    Route::get('/{id}/profile', 'App\Http\Controllers\UserController@viewprofile');
     Route::get('/admin/users', 'App\Http\Controllers\UserController@show');
 
     
 
 });
 
-Route::get('/aboutUs', function(){
-    return view('admin.aboutUs');
-});
+// Route::middleware(['auth'])->group(function(){
+//     Route::get('/aboutUs', function(){
+//         return view('admin.aboutUs0');
+//     });
+// });
+
+Route::get('/aboutUs', 'App\Http\Controllers\UserController@viewabout');
+
+
