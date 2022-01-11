@@ -187,7 +187,7 @@
 
         <div class="row">
             <div class="col-lg-2 offset-lg-9 col-4 offset-4 about">
-                <a href="https://github.com/Faiq-Shahzad">GitHub</a>
+                <a href="https://github.com/Faiq-Shahzad/Cineplex-Web-Based-Application-">GitHub</a>
             </div>
         </div>
 

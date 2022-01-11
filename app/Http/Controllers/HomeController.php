@@ -27,4 +27,9 @@ class HomeController extends Controller
         $movielist = Movies::all();
         return view('/home', compact('movielist'));
     }
+
+    public function adminindex(){
+        $movielist = Movies::all();
+        return view('/admin/home', compact('movielist'));
+    }
 }

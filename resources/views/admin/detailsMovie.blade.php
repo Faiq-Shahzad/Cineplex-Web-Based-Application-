@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.adminlayout')
 
 <head>
     <title>Movie - Details</title>
@@ -77,7 +77,7 @@
 
         <h5>Write a Review (Optional): </h5>
         
-        <form class="review" action="{{ url("/viewMovies/$movie->id/$user->id") }}" method='POST'>
+        <form class="review" action="{{ url("/admin/movieDetails/$movie->id/$user->id") }}" method='POST'>
             @csrf
             
             <div class="row">

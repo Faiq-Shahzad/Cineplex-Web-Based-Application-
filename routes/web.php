@@ -24,9 +24,8 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware(['auth', 'chkAdmin'])-> group(function(){
-    Route::get('/admin/home', function(){
-        return view('admin.home');
-    });
+
+    Route::get('/admin/home', 'App\Http\Controllers\HomeController@adminindex');
 
     Route::get('/admin/viewMovies', 'App\Http\Controllers\MovieController@show');
     Route::get('/admin/{id}/edit', 'App\Http\Controllers\MovieController@edit');
@@ -46,6 +45,9 @@ Route::middleware(['auth', 'chkAdmin'])-> group(function(){
     Route::get('/admin/aboutUs', function(){
         return view('admin.aboutUs');
     });
+
+    Route::get('/admin/movieDetails/{id}', 'App\Http\Controllers\MovieController@adminmoviedetails');
+    Route::post('/admin/movieDetails/{id}/{user_id}', 'App\Http\Controllers\MovieController@adminaddreview');
 
     
 

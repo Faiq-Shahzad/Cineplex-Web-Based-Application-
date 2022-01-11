@@ -111,4 +111,25 @@ class MovieController extends Controller
 
         return view('/detailsMovie', compact('movie', 'user'));
     }
+
+    public function adminaddreview(Request $request, $id, $user_id){
+
+        $review = new Review();
+
+        $review->user_id = $user_id;
+        $review->movie_id = $id;
+        $review->movie_review = $request->input('movie_review');
+
+        $review->save();
+
+        return redirect('/admin/home')->with('status', 'Review Added Successfully');
+    }
+
+    public function adminmoviedetails($id){
+        $movie = Movies::find($id);
+        $user = Auth::user();
+
+
+        return view('/admin/detailsMovie', compact('movie', 'user'));
+    }
 }

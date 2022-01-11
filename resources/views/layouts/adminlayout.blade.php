@@ -127,8 +127,7 @@
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ms-auto">
-
-                    <li class="nav-item"><a class="nav-link" href="/admin/home">Home</a></li>
+                    <li class="nav-item "><a class="nav-link {{ Request::is('admin/home') ? 'bg-dark' :'' }}" href="/admin/home">Home</a></li>
 
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -142,7 +141,7 @@
                     </li>
 
                     <li class="nav-item"><a class="nav-link" href="/admin/users">Users</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/aboutUs">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/admin/aboutUs">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="/contactUs">Contact Us</a></li>
 
                     <!-- Authentication Links -->
