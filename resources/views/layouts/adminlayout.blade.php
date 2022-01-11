@@ -48,6 +48,8 @@
             .navbar-dark .nav-link:hover{
                 background-color: rgba(255, 255, 255, 0.705) !important;
                 color: black !important;
+                transition: transform .4s;
+                transform: scale(1.2);
 
             }
 
@@ -67,14 +69,12 @@
                 border-top: 1px solid wheat;
                 color: white;
                 background-color: rgb(53, 48, 48);
-                /* background-color: rgba(161, 33, 33, 0.76); */
                 padding-top: 1%;
                 padding-bottom: 1%;
                 margin-bottom: 0;
             }
 
             .navbar div .dropdown-menu{
-                /* background-color: rgb(233, 20, 20); */
                 background-color: rgba(233, 20, 20, 0.795);
             }
 
@@ -84,6 +84,16 @@
 
             button {
                 border: 1px solid white;
+            }
+
+            .navbar-nav .active{
+                font-weight: bold;
+                text-decoration: underline white;
+            }
+
+            .navbar-nav .active:hover{
+                font-weight: bold;
+                text-decoration: underline black;
             }
         }
 
@@ -127,10 +137,11 @@
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item "><a class="nav-link {{ Request::is('admin/home') ? 'bg-dark' :'' }}" href="/admin/home">Home</a></li>
+                    
+                    <li class="nav-item "><a class="nav-link {{ Request::is('admin/home') ? "active" :"" }}" href="/admin/home">Home</a></li>
 
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle {{ Request::is('admin/viewMovies') ? "active" :"" }} {{ Request::is('admin/addMovies') ? "active" :"" }}" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             Movies
                         </a>
 
@@ -140,9 +151,9 @@
                         </div>
                     </li>
 
-                    <li class="nav-item"><a class="nav-link" href="/admin/users">Users</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/admin/aboutUs">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/contactUs">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link {{ Request::is('admin/users') ? "active" :"" }}" href="/admin/users">Users</a></li>
+                    <li class="nav-item"><a class="nav-link {{ Request::is('admin/aboutUs') ? "active" :"" }}" href="/admin/aboutUs">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link {{ Request::is('admin/contactUs') ? "active" :"" }}" href="/contactUs">Contact Us</a></li>
 
                     <!-- Authentication Links -->
                     @guest

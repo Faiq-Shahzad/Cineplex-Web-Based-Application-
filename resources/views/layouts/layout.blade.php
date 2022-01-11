@@ -46,6 +46,8 @@
             .navbar-dark .nav-link:hover{
                 background-color: rgba(255, 255, 255, 0.705) !important;
                 color: black !important;
+                transition: transform .4s;
+                transform: scale(1.2);
 
             }
 
@@ -81,6 +83,16 @@
 
             button {
                 border: 1px solid white;
+            }
+
+            .navbar-nav .active{
+                font-weight: bold;
+                text-decoration: underline white;
+            }
+
+            .navbar-nav .active:hover{
+                font-weight: bold;
+                text-decoration: underline black;
             }
         }
 
@@ -125,10 +137,10 @@
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ms-auto">
 
-                    <li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/allMovies">Movies</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/aboutUs">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/contactUs">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link {{ Request::is('home') ? "active" :"" }}" href="/home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link {{ Request::is('allMovies') ? "active" :"" }}" href="/allMovies">Movies</a></li>
+                    <li class="nav-item"><a class="nav-link {{ Request::is('aboutUs') ? "active" :"" }}" href="/aboutUs">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link {{ Request::is('contactUs') ? "active" :"" }}" href="/contactUs">Contact Us</a></li>
 
                     <!-- Authentication Links -->
                     @guest
