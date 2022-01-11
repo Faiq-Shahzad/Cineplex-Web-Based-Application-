@@ -124,7 +124,7 @@
                     <td><img src="{{ asset('covers/'.$movie->movie_cover) }}" alt=""></td>
                     <td><a href="/admin/{{$movie->id}}/edit"><i class="fas fa-edit"></i></a>&emsp;
                         <a href="/admin/{{$movie->id}}/delete"><i class="fas fa-trash-alt"></i></a>&emsp;
-                        <a href="/admin/{{$movie->id}}/review">Reviews</a>&emsp;
+                        <a href="/admin/{{$movie->id}}/review">Reviews</a>
                         <a href="/admin/{{$movie->id}}/show">Screen</a>
                     </td>
             @endforeach

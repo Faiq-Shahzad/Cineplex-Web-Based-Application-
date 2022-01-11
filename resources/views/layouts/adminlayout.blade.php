@@ -153,7 +153,17 @@
                         </div>
                     </li>
 
-                    <li class="nav-item"><a class="nav-link {{ Request::is('admin/viewShows') ? "active" :"" }}" href="/admin/viewShows">Users</a></li>
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle {{ Request::is('admin/viewShows') ? "active" :"" }}" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            Show
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/admin/viewShows">View Shows</a>
+                            <a class="dropdown-item" href="/admin/viewMovies">Add Shows</a>
+                        </div>
+                    </li>
+
                     <li class="nav-item"><a class="nav-link {{ Request::is('admin/users') ? "active" :"" }}" href="/admin/users">Users</a></li>
                     <li class="nav-item"><a class="nav-link {{ Request::is('admin/aboutUs') ? "active" :"" }}" href="/admin/aboutUs">About Us</a></li>
                     <li class="nav-item"><a class="nav-link {{ Request::is('admin/contactUs') ? "active" :"" }}" href="/contactUs">Contact Us</a></li>

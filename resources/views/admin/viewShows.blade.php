@@ -1,7 +1,7 @@
 @extends('layouts.adminlayout')
 
 <head>
-    <title>Admin - Movies</title>
+    <title>Admin - Shows</title>
 </head>
 
 <style>
@@ -77,14 +77,14 @@
     </div>
     @endif
 
-    <h1>Movies</h1>
+    <h1>Shows</h1>
     <hr>
 
     <table class="table table-striped table-hover table-dark" id="pc_table">
         <thead>
         <tr class="text-center">
             <th scope="col">ID</th>
-            <th scope="col">Movie Name</th>
+            <th scope="col">Movie</th>
             <th scope="col">Seats</th>
             <th scope="col">Day</th>
             <th scope="col">Time</th>
@@ -100,9 +100,7 @@
                     <td>{{ $show->movie_seats }}</td>
                     <td>{{ $show->show_day }}</td>
                     <td>{{ $show->movie_time }}</td>
-                    <td><a href="/admin/{{$show->id}}/editshow"><i class="fas fa-edit"></i></a>&emsp;
-                        <a href="/admin/{{$show->id}}/deleteshow"><i class="fas fa-trash-alt"></i></a>&emsp;
-                    </td>
+                    <td><a href="/admin/{{$show->id}}/deleteshow"><i class="fas fa-trash-alt"></i></a></td>
                 </tr>
             @endforeach
         </tbody>
@@ -112,21 +110,25 @@
         <thead>
         <tr class="text-center">
             <th scope="col">ID</th>
-            <th scope="col">Name</th>
-            <th scope="col">Cover</th>
+            <th scope="col">Movie</th>
+            <th scope="col">Seats</th>
+            <th scope="col">Day</th>
+            <th scope="col">Time</th>
             <th scope="col">Action</th>
         </tr>
         </thead>
         <tbody>
-            {{-- @foreach ($movielist as $movie)
+            @foreach ($showlist as $show)
+                
                 <tr>
-                    <td>{{ $movie->id }}</td>
-                    <td>{{ $movie->movie_name }}</td>
-                    <td><img src="{{ asset('covers/'.$movie->movie_cover) }}" alt=""></td>
-                    <td><a href="/admin/{{$movie->id}}/edit"><i class="fas fa-edit"></i></a>&emsp;
-                        <a href="/admin/{{$movie->id}}/delete"><i class="fas fa-trash-alt"></i></a>&emsp;
-                        <a href="/admin/{{$movie->id}}/review">Reviews</a></td>
-            @endforeach --}}
+                    <td>{{ $show->id }}</td>
+                    <td>{{ $show->movie_id }}</td>
+                    <td>{{ $show->movie_seats }}</td>
+                    <td>{{ $show->show_day }}</td>
+                    <td>{{ $show->movie_time }}</td>
+                    <td><a href="/admin/{{$show->id}}/deleteshow"><i class="fas fa-trash-alt"></i></a></td>
+                </tr>
+            @endforeach
         </tbody>
     </table>
     

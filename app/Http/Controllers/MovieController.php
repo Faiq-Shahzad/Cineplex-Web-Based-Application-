@@ -157,4 +157,12 @@ class MovieController extends Controller
 
         return redirect('/admin/viewShows')->with('status', 'Show Added Successfully');
     }
+
+    public function deleteshow($id){
+        $show = Shows::find($id);
+        
+        $show->delete();
+
+        return redirect('/admin/viewShows')->with('status', 'Show Deleted Successfully');
+    }
 }
