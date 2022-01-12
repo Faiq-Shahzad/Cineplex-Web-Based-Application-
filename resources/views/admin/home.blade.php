@@ -86,7 +86,7 @@
 
             @php ($movie_covers = [])
 
-            @foreach ($movielist as $movie)
+            @foreach ($movies as $movie)
                 @php (array_push($movie_covers, asset('covers/'.$movie->movie_cover)))
             @endforeach
 
@@ -124,7 +124,7 @@
 
         <div class="row">
 
-            @php ($movies = [])
+            {{-- @php ($movies = [])
 
             @foreach ($movielist as $item)
 
@@ -138,6 +138,20 @@
                     </div>
                 </div>
                 @php (array_push($movies, $item))
+            @endforeach --}}
+
+            @foreach ($screen as $item)
+
+                <div class="card col-xl-3 mx-3 my-3 bg-dark text-white" style="width: 18rem;">
+                    <img src="{{asset('covers/'.$item[7])}}" class="card-img-top" alt="..." height="150-px">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $item[4] }}</h5>
+                        <p class="card-text">Year: {{ $item[5] }}</p>
+                        <p class="card-text">Ratings: {{ $item[6] }}</p>
+                        <p class="card-text">Time: {{ $item[3] }}; {{ $item[2] }}</p>
+                        <a href="/admin/movieDetails/{{ $item[1] }}" class="btn btn-primary">details</a>
+                    </div>
+                </div>
             @endforeach
 
             {{-- @php ($random_movies = array_rand($movies, 1)) --}}
