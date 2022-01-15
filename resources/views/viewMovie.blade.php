@@ -14,27 +14,52 @@
             margin-right: auto;
             margin-top: 2% !important;
         }
+
+        .card:hover{
+            transition: transform .4s;
+            transform: scale(1.1);
+        }
+
+        .container{
+            width: 70%;
+        }
+
+        .card a{
+            text-decoration: none;
+            color: white;
+        }
+
+        .card a:hover{
+            color: white;
+        }
     </style>
 </head>
 
 @section('content')
 
-    <h1>Screening Now</h1>
+    <h1>All Movies</h1>
 
-    @php ($movies = [])
+    <div class="user_movies container">
+        <div class="row">
 
-    @foreach ($movielist as $item)
+            @php ($movies = [])
 
-        <div class="card col-xl-3 mx-3 my-3 bg-dark text-white" style="width: 18rem;">
-            <img src="{{asset('covers/'.$item->movie_cover)}}" class="card-img-top" alt="..." height="150-px">
-            <div class="card-body">
-                <h5 class="card-title">{{ $item->movie_name }}</h5>
-                <p class="card-text">Year: {{ $item->year }}</p>
-                <p class="card-text">Ratings: {{ $item->ratings }}</p>
-                <a href="viewMovies/{{ $item->id }}" class="btn btn-primary">details</a>
-            </div>
+            @foreach ($movielist as $item)
+
+                <div class="card col-xl-3 mx-3 my-3 bg-dark text-white" style="width: 18rem;">
+                    <a href="viewMovies/{{ $item->id }}">
+                        <img src="{{asset('covers/'.$item->movie_cover)}}" class="card-img-top" alt="..." height="150-px">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $item->movie_name }}</h5>
+                            <p class="card-text">Year: {{ $item->year }}</p>
+                            <p class="card-text">Ratings: {{ $item->ratings }}</p>
+                        </div>
+                    </a>
+                </div>
+                @php (array_push($movies, $item))
+            @endforeach 
+
         </div>
-        @php (array_push($movies, $item))
-    @endforeach 
+    </div>
     
 @endsection
