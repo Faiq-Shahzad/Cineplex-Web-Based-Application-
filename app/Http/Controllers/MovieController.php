@@ -165,4 +165,9 @@ class MovieController extends Controller
 
         return redirect('/admin/viewShows')->with('status', 'Show Deleted Successfully');
     }
+
+    public function usershow(){
+        $movielist = Movies::all();
+        return view('viewMovie', compact('movielist'));
+    }
 }
