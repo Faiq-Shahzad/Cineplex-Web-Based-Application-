@@ -40,7 +40,7 @@ Route::middleware(['auth', 'chkAdmin'])-> group(function(){
         return view('admin.addMovies');
     });
 
-    Route::get('/{id}/profile', 'App\Http\Controllers\UserController@viewprofile');
+    Route::get('/admin/{id}/profile', 'App\Http\Controllers\UserController@viewprofile');
     Route::get('/admin/users', 'App\Http\Controllers\UserController@show');
 
     Route::get('/admin/aboutUs', function(){
@@ -65,6 +65,8 @@ Route::get('/aboutUs', function(){
     return view('aboutUsUser');
 });
 
+
+Route::get('/{id}/profile', 'App\Http\Controllers\UserController@userviewprofile');
 Route::get('/viewMovies/{id}', 'App\Http\Controllers\MovieController@moviedetails');
 Route::get('/bookTickets/{id}', 'App\Http\Controllers\TicketController@bookticket');
 Route::post('/viewMovies/{id}/{user_id}', 'App\Http\Controllers\MovieController@addreview');

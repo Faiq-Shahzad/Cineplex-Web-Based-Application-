@@ -20,7 +20,13 @@ class UserController extends Controller
     public function viewprofile($id){
 
         $user = User::find($id);
-        return view('profile', compact('user'));
+        return view('/admin/profile', compact('user'));
+    }
+
+    public function userviewprofile($id){
+
+        $user = User::find($id);
+        return view('/profile', compact('user'));
     }
 
     // public function viewabout(){

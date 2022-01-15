@@ -153,7 +153,7 @@
                         <p class="card-text">Year: {{ $item[5] }}</p>
                         <p class="card-text">Ratings: {{ $item[6] }}</p>
                         <p class="card-text">Time: {{ $item[3] }}; {{ $item[2] }}</p>
-                        <a href="/movieDetails/{{ $item[1] }}" class="btn btn-primary">details</a>
+                        <a href="/viewMovies/{{ $item[1] }}" class="btn btn-primary">details</a>
                         <a href="/bookTickets/{{ $item[1] }}" class="btn btn-warning">book tickets</a>
                     </div>
                 </div>
