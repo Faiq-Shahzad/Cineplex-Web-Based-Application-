@@ -9,11 +9,13 @@ class Tickets extends Model
 {
     use HasFactory;
 
-    protected $table = "movies";
+    protected $table = "tickets";
     protected $fillable = [
         'movie_id',
         'user_id',
+        'no_of_seats',
         'movie_seats',
+        'total_bill',
         'show_id',
     ];
 }

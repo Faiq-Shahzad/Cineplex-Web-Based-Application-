@@ -55,6 +55,10 @@
         width: 70%;
     }
 
+    .btn-warning:hover{
+        background-color: red !important; 
+    }
+
     @media(max-width: 767px){
 
         .carousel-item > .d-block{
@@ -149,7 +153,8 @@
                         <p class="card-text">Year: {{ $item[5] }}</p>
                         <p class="card-text">Ratings: {{ $item[6] }}</p>
                         <p class="card-text">Time: {{ $item[3] }}; {{ $item[2] }}</p>
-                        <a href="/admin/movieDetails/{{ $item[1] }}" class="btn btn-primary">details</a>
+                        <a href="/movieDetails/{{ $item[1] }}" class="btn btn-primary">details</a>
+                        <a href="/bookTickets/{{ $item[1] }}" class="btn btn-warning">book tickets</a>
                     </div>
                 </div>
             @endforeach
