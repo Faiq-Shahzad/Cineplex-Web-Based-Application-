@@ -21,6 +21,14 @@ class TicketController extends Controller{
         return view('/bookTickets', compact('movie', 'user'));
     }
 
+    public function adminbookticket($id){
+
+        $movie = Movies::find($id);
+        $user = Auth::user();
+
+        return view('/admin/bookTickets', compact('movie', 'user'));
+    }
+
 }
 
 ?>

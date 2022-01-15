@@ -55,6 +55,7 @@ Route::middleware(['auth', 'chkAdmin'])-> group(function(){
 
     Route::get('/admin/movieDetails/{id}', 'App\Http\Controllers\MovieController@adminmoviedetails');
     Route::post('/admin/movieDetails/{id}/{user_id}', 'App\Http\Controllers\MovieController@adminaddreview');
+    Route::get('/admin/bookTickets/{id}', 'App\Http\Controllers\TicketController@adminbookticket');
 
     
 
