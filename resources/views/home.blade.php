@@ -86,7 +86,7 @@
 
             @php ($movie_covers = [])
 
-            @foreach ($movielist as $movie)
+            @foreach ($movies as $movie)
                 @php (array_push($movie_covers, asset('covers/'.$movie->movie_cover)))
             @endforeach
 
@@ -118,38 +118,62 @@
         </button>
     </div>
 
-    <h1>Random Movies</h1>
+    <h1>Screening Now</h1>
 
     <div class="home_movies container">
 
         <div class="row">
 
-            @php ($movies = [])
+            {{-- @php ($movies = [])
 
             @foreach ($movielist as $item)
-                @php (array_push($movies, $item))
-            @endforeach
-
-            @php ($random_movies = array_rand($movies, 5))
-
 
                 <div class="card col-xl-3 mx-3 my-3 bg-dark text-white" style="width: 18rem;">
+                    <img src="{{asset('covers/'.$item->movie_cover)}}" class="card-img-top" alt="..." height="150-px">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $item->movie_name }}</h5>
+                        <p class="card-text">Year: {{ $item->year }}</p>
+                        <p class="card-text">Ratings: {{ $item->ratings }}</p>
+                        <a href="/admin/movieDetails/{{ $item->id }}" class="btn btn-primary">details</a>
+                    </div>
+                </div>
+                @php (array_push($movies, $item))
+            @endforeach --}}
+
+            @foreach ($screen as $item)
+
+                <div class="card col-xl-3 mx-3 my-3 bg-dark text-white" style="width: 18rem;">
+                    <img src="{{asset('covers/'.$item[7])}}" class="card-img-top" alt="..." height="150-px">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $item[4] }}</h5>
+                        <p class="card-text">Year: {{ $item[5] }}</p>
+                        <p class="card-text">Ratings: {{ $item[6] }}</p>
+                        <p class="card-text">Time: {{ $item[3] }}; {{ $item[2] }}</p>
+                        <a href="/admin/movieDetails/{{ $item[1] }}" class="btn btn-primary">details</a>
+                    </div>
+                </div>
+            @endforeach
+
+            {{-- @php ($random_movies = array_rand($movies, 1)) --}}
+
+
+                {{-- <div class="card col-xl-3 mx-3 my-3 bg-dark text-white" style="width: 18rem;">
                     <img src="{{asset('covers/'.$movies[$random_movies[0]]->movie_cover)}}" class="card-img-top" alt="..." height="150-px">
                     <div class="card-body">
                         <h5 class="card-title">{{ $movies[$random_movies[0]]->movie_name }}</h5>
                         <p class="card-text">Year: {{ $movies[$random_movies[0]]->year }}</p>
                         <p class="card-text">Ratings: {{ $movies[$random_movies[0]]->ratings }}</p>
-                        <a href="/viewMovies/{{ $movies[$random_movies[0]]->id }}" class="btn btn-primary">details</a>
+                        <a href="/admin/movieDetails/{{ $movies[$random_movies[0]]->id }}" class="btn btn-primary">details</a>
                     </div>
-                </div>
+                </div> --}}
 
-                <div class="card col-xl-3 mx-3 my-3 bg-dark text-white" style="width: 18rem;">
+                {{-- <div class="card col-xl-3 mx-3 my-3 bg-dark text-white" style="width: 18rem;">
                     <img src="{{asset('covers/'.$movies[$random_movies[1]]->movie_cover)}}" class="card-img-top" alt="..." height="150-px">
                     <div class="card-body">
                         <h5 class="card-title">{{ $movies[$random_movies[1]]->movie_name }}</h5>
                         <p class="card-text">{{ $movies[$random_movies[1]]->year }}</p>
                         <p class="card-text">Ratings: {{ $movies[$random_movies[1]]->ratings }}</p>
-                        <a href="/viewMovies/{{ $movies[$random_movies[1]]->id }}" class="btn btn-primary">details</a>
+                        <a href="/admin/movieDetails/{{ $movies[$random_movies[1]]->id }}" class="btn btn-primary">details</a>
                     </div>
                 </div>
 
@@ -159,9 +183,9 @@
                         <h5 class="card-title">{{ $movies[$random_movies[2]]->movie_name }}</h5>
                         <p class="card-text">{{ $movies[$random_movies[2]]->year }}</p>
                         <p class="card-text">Ratings: {{ $movies[$random_movies[2]]->ratings }}</p>
-                        <a href="/viewMovies/{{ $movies[$random_movies[2]]->id }}" class="btn btn-primary">details</a>
+                        <a href="/admin/movieDetails/{{ $movies[$random_movies[2]]->id }}" class="btn btn-primary">details</a>
                     </div>
-                </div>
+                </div> --}}
             
         </div>
 
