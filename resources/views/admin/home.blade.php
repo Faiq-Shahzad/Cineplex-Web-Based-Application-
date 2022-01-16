@@ -1,8 +1,7 @@
+<!DOCTYPE html>
 @extends('layouts.adminlayout')
 
-<head>
-    <title>Cineplex - Home</title>
-</head>
+@section('title') Admin - Home @endsection
 
 <style>
     .alert{
@@ -62,7 +61,7 @@
         }
     }
 
-    </style>
+</style>
 
 
 

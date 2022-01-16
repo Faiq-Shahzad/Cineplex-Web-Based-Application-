@@ -1,8 +1,6 @@
 @extends('layouts.adminlayout')
 
-<head>
-    <title>Admin - Movies Reviews</title>
-</head>
+@section('title') Admin - Movie Reviews @endsection
 
 <style>
 

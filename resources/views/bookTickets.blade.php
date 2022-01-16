@@ -1,7 +1,8 @@
 @extends('layouts.layout')
 
+
+@section('title') Movie - Book Tickets @endsection
 <head>
-    <title>Movie - Book Tickets</title>
 
 
 <style>
@@ -64,8 +65,6 @@
 
 
 </style>
-
-</head>
 
 @section('content')
 

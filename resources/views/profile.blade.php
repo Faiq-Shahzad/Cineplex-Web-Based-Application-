@@ -1,7 +1,6 @@
 @extends('layouts.layout')
 
-<head>
-    <title>Admin - Profile</title>
+@section('title') Profile @endsection
 
 
 <style>
@@ -51,8 +50,6 @@
 
 
 </style>
-
-</head>
 
 @section('content')
 

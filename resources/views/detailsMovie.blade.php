@@ -1,7 +1,6 @@
 @extends('layouts.layout')
 
-<head>
-    <title>Movie - Details</title>
+@section('title') Movie - Details @endsection
 
 
 <style>
@@ -60,8 +59,6 @@
 
 
 </style>
-
-</head>
 
 @section('content')
 

@@ -1,7 +1,6 @@
 @extends('layouts.adminlayout')
 
-<head>
-    <title>About Us</title>
+@section('title') Admin - About Us @endsection
 
 
 <style>
@@ -97,8 +96,6 @@
     }
 
 </style>
-
-</head>
 
 @section('content')
 

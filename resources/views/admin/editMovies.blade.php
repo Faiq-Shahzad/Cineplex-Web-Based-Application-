@@ -1,8 +1,6 @@
 @extends('layouts.adminlayout')
 
-<head>
-    <title>Admin - Edit Movies</title>
-</head>
+@section('title') Admin - Edit Movies @endsection
 
 <style>
     @media(max-width: 1600px){

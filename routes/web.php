@@ -71,5 +71,12 @@ Route::get('/viewMovies/{id}', 'App\Http\Controllers\MovieController@moviedetail
 Route::get('/allMovies', 'App\Http\Controllers\MovieController@usershow');
 Route::get('/bookTickets/{id}', 'App\Http\Controllers\TicketController@bookticket');
 Route::post('/viewMovies/{id}/{user_id}', 'App\Http\Controllers\MovieController@addreview');
+Route::get('/contactUs', function(){
+    return view('contactUs');
+});
+
+Route::get('layout', function(){
+    return view('layouts.layout');
+});
 
 

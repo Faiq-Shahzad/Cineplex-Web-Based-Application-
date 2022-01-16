@@ -1,7 +1,6 @@
 @extends('layouts.layout')
 
-<head>
-    <title>All Movies</title>
+@section('title') All Movie @endsection
 
     <style>
         h1{
@@ -33,7 +32,6 @@
             color: white;
         }
     </style>
-</head>
 
 @section('content')
 

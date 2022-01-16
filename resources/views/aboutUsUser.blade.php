@@ -1,7 +1,6 @@
 @extends('layouts.layout')
 
-<head>
-    <title>About Us</title>
+@section('title') Cineplex - About Us @endsection
 
 
 <style>
@@ -97,8 +96,6 @@
     }
 
 </style>
-
-</head>
 
 @section('content')
 
