@@ -2,6 +2,8 @@
 
 @section('title') Admin - Movie Reviews @endsection
 
+@section('style')
+
 <style>
 
     .alert{
@@ -56,6 +58,8 @@
     }
 
 </style>
+
+@endsection
 
 @section('content')
 

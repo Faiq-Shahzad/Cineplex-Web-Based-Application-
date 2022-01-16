@@ -2,6 +2,8 @@
 
 @section('title') Admin - Edit Movies @endsection
 
+@section('style')
+
 <style>
     @media(max-width: 1600px){
         h1{
@@ -37,6 +39,8 @@
         
     }
 </style>
+
+@endsection
 
 @section('content')
     

@@ -2,6 +2,7 @@
 
 @section('title') Movie - Details @endsection
 
+@section('style')
 
 <style>
 
@@ -59,6 +60,8 @@
 
 
 </style>
+
+@endsection
 
 @section('content')
 

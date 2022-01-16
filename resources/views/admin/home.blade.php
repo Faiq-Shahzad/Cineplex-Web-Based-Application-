@@ -3,6 +3,8 @@
 
 @section('title') Admin - Home @endsection
 
+@section('style')
+
 <style>
     .alert{
         width: 25%;
@@ -63,7 +65,7 @@
 
 </style>
 
-
+@endsection
 
 @section('content')
 

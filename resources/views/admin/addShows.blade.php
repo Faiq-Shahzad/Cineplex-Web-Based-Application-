@@ -2,6 +2,8 @@
 
 @section('title') Admin - Add Show @endsection
 
+@section('style')
+
 <style>
     @media(max-width: 1600px){
         h1{
@@ -38,6 +40,8 @@
         
     }
 </style>
+
+@endsection
 
 @section('content')
     

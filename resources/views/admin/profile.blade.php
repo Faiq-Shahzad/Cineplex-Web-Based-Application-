@@ -2,6 +2,7 @@
 
 @section('title') Admin - Profile @endsection
 
+@section('style')
 
 <style>
 
@@ -51,6 +52,8 @@
 
 
 </style>
+
+@endsection
 
 
 @section('content')
