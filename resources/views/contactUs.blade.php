@@ -1,10 +1,6 @@
 @extends('layouts.layout')
 
-@section('title')
-
-Cineplex - Contact Us
-    
-@endsection
+@section('title') Cineplex - Contact Us @endsection
 
 @section('content')
 
