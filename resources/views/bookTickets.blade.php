@@ -81,7 +81,7 @@
         
         <h5>Select Tickets: </h5>
         
-        <form class="review" action="{{ url("/tickets/$movie->id/$user->id") }}" method='POST'>
+        <form class="review" action="{{ url("/bookTickets/$movie->id/$user->id/$show->id") }}" method='POST'>
             @csrf
 
             <table class="table">
@@ -100,9 +100,9 @@
                     <td scope="row">E-Standard</td>
                     <td>1000</td>
                     <td id="minus" class="updown"><i class="fas fa-minus-circle"></i></td>
-                    <td><input type="number" name="no_of_seats" id="seats" min="1" max="10" value="1" disabled></td>
+                    <td><input type="number" name="no_of_seats" id="seats" min="1" max="10" value="1"></td>
                     <td id="plus" class="updown"><i class="fas fa-plus-circle"></i></td>
-                    <td><input type="number" id="subtotal" value="1000" disabled></td>
+                    <td><input type="number" id="subtotal" value="1000"></td>
                 </tr>
                 <tr>
                     <td scope="row">GST</td>
@@ -118,7 +118,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td><input type="number" id="total" value="1050" disabled></td>
+                    <td><input type="number" id="total" name="totalbill" value="1050"></td>
                 </tr>
                 </tbody>
               </table>

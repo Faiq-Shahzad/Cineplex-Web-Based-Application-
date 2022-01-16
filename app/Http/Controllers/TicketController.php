@@ -13,22 +13,50 @@ use Illuminate\Support\Facades\Auth;
 
 class TicketController extends Controller{
 
-    public function bookticket($id){
+    public function bookticket($id, $show_id){
 
         $movie = Movies::find($id);
+        $show = Shows::find($show_id);
         $user = Auth::user();
 
-        return view('/bookTickets', compact('movie', 'user'));
+        return view('/bookTickets', compact('movie', 'user', 'show'));
     }
 
-    public function adminbookticket($id){
+    public function addticket(Request $request, $id, $m_id, $show_id){
 
-        $movie = Movies::find($id);
-        $user = Auth::user();
+        $ticket = new Tickets();
+        $movie = Movies::find($m_id);
+        $show = Shows::find($show_id);
 
-        return view('/admin/bookTickets', compact('movie', 'user'));
+        $remainingseats = $show->movie_seats;
+        $seats = $request->input('no_of_seats');
+
+        $newseats = $remainingseats - $seats;
+
+        // print_r(" remainingseats");
+        // print_r ($remainingseats);
+        // print_r(" seats");
+        // print_r ($seats);
+        // print_r(" newseats");
+        // print_r ($newseats);
+
+        $ticket->user_id = $id;
+        $ticket->movie_id = $m_id;
+        $ticket->no_of_seats = $seats; 
+        $ticket->movie_seats = $newseats;
+        $ticket->show_id = $show_id; 
+        $ticket->total_bill = $request->input('totalbill');
+
+        $show->movie_seats = $newseats;
+        
+        $show->update();
+
+        $ticket->save(); 
+
+
+
+        return redirect('/home')->with('status', 'Ticket Added Successfully');
     }
-
 }
 
 ?>

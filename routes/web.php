@@ -67,7 +67,8 @@ Route::get('/aboutUs', function(){
 Route::get('/{id}/profile', 'App\Http\Controllers\UserController@userviewprofile');
 Route::get('/viewMovies/{id}', 'App\Http\Controllers\MovieController@moviedetails');
 Route::get('/allMovies', 'App\Http\Controllers\MovieController@usershow');
-Route::get('/bookTickets/{id}', 'App\Http\Controllers\TicketController@bookticket');
+Route::get('/bookTickets/{id}/{show_id}', 'App\Http\Controllers\TicketController@bookticket');
+Route::post('/bookTickets/{m_id}/{id}/{show_id}', 'App\Http\Controllers\TicketController@addticket');
 Route::post('/viewMovies/{id}/{user_id}', 'App\Http\Controllers\MovieController@addreview');
 Route::post('/{user_id}/contactUs', 'App\Http\Controllers\UserController@addfeedback');
 Route::get('/{user_id}/contactUs', 'App\Http\Controllers\UserController@contactus');
