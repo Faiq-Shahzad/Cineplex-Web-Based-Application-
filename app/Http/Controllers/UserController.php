@@ -34,11 +34,19 @@ class UserController extends Controller
         return view('/admin/feedback', compact('feedbacks'));
     }
 
-    public function addfeedback(Request $request, $user_id){
+    public function contactus($id){
+
+        $user = User::find($id);
+
+        return view('/contactUs', compact('user'));
+    }
+
+    public function addfeedback(Request $request, $id){
 
         $feedback = new Feedbacks();
 
-        $feedback->user_id = $user_id;
+        print_r($id);
+        $feedback->user_id = $id;
         $feedback->user_name = $request->input('user_name');
         $feedback->user_email = $request->input('user_email');
         $feedback->user_feedback = $request->input('user_feedback');

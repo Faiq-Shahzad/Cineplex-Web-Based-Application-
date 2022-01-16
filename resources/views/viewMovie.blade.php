@@ -21,8 +21,8 @@
         transform: scale(1.1);
     }
 
-    .container{
-        width: 70%;
+    .user_movies{
+        width: 90%;
     }
 
     .card a{

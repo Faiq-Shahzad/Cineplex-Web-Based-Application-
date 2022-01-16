@@ -51,7 +51,7 @@
         transform: scale(1.1);
     }
 
-    .container{
+    .home_movies{
         width: 70%;
     }
 

@@ -27,17 +27,19 @@
             font-weight: bold !important;
         }
 
-        .details{
+        .profile{
+            margin-left: auto !important;
+            margin-right: auto !important;
+            width: 70%;
             color: white;
             padding: 2%;
             text-align: justify;
             font-size: 18px;
         }
 
-        .profile{
-            margin-left: auto !important;
-            margin-right: auto !important;
-            width: 70%;
+        .profile input{
+            color: white;
+            font-weight: bold;
         }
 
         form .row{
@@ -45,10 +47,12 @@
         }
 
     }
-/* 
-    @media(max-width: 767px){
 
-    } */
+    @media(max-width: 767px){
+        .profile{
+            width: 100%;
+        }
+    }
 
 
 </style>
@@ -58,25 +62,23 @@
 
 @section('content')
 
-    <div class="details">
-        <h1>Profile</h1>
+    <h1>Profile</h1>
+    
+    <form class="profile">
+        @csrf
         
-        <form class="profile">
-            @csrf
-            
-            <div class="row">
-                <label class="offset-xl-4 col-xl-1 col-2">User ID:</label>
-                <input type="text" class="col-xl-3 col-3" value= '{{$user->id}}'>
-            </div>
-            <div class="row">
-                <label class="offset-xl-4 col-xl-1 col-2">Name:</label>
-                <input type="text" class="col-xl-3 col-3" value='{{$user->name}}'>
-            </div>
-            <div class="row">
-                <label class="offset-xl-4 col-xl-1 col-2">Email:</label>
-                <input type="text" class="col-xl-3 col-3" value='{{$user->email}}'>
-            </div>
-        </form>
-    </div>
+        <div class="row">
+            <label class="offset-xl-4 col-xl-1 offset-2 col-3">User ID:</label>
+            <input type="text" class="col-xl-3 offset-1 col-4" value= '{{$user->id}}' disabled>
+        </div>
+        <div class="row">
+            <label class="offset-xl-4 col-xl-1 col-2">Name:</label>
+            <input type="text" class="col-xl-3 offset-1 col-9" value='{{$user->name}}' disabled>
+        </div>
+        <div class="row">
+            <label class="offset-xl-4 col-xl-1 col-2">Email:</label>
+            <input type="text" class="col-xl-3 offset-1 col-9" value='{{$user->email}}' disabled>
+        </div>
+    </form>
     
 @endsection

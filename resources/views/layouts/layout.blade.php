@@ -156,7 +156,7 @@
                     <li class="nav-item"><a class="nav-link {{ Request::is('home') ? "active" :"" }}" href="/home">Home</a></li>
                     <li class="nav-item"><a class="nav-link {{ Request::is('allMovies') ? "active" :"" }}" href="/allMovies">Movies</a></li>
                     <li class="nav-item"><a class="nav-link {{ Request::is('aboutUs') ? "active" :"" }}" href="/aboutUs">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link {{ Request::is('contactUs') ? "active" :"" }}" href="/contactUs">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link {{ Request::is('contactUs') ? "active" :"" }}" href="/{{ Auth::user()->id }}/contactUs">Contact Us</a></li>
 
                     <!-- Authentication Links -->
                     @guest

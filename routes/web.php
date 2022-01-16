@@ -56,11 +56,7 @@ Route::middleware(['auth', 'chkAdmin'])-> group(function(){
 
     Route::get('/admin/movieDetails/{id}', 'App\Http\Controllers\MovieController@adminmoviedetails');
     Route::post('/admin/movieDetails/{id}/{user_id}', 'App\Http\Controllers\MovieController@adminaddreview');
-    Route::get('/admin/bookTickets/{id}', 'App\Http\Controllers\TicketController@adminbookticket');
-
-
-    
-
+    Route::get('/admin/bookTickets/{id}', 'App\Http\Controllers\TicketController@adminbookticket');   
 });
 
 Route::get('/aboutUs', function(){
@@ -73,10 +69,8 @@ Route::get('/viewMovies/{id}', 'App\Http\Controllers\MovieController@moviedetail
 Route::get('/allMovies', 'App\Http\Controllers\MovieController@usershow');
 Route::get('/bookTickets/{id}', 'App\Http\Controllers\TicketController@bookticket');
 Route::post('/viewMovies/{id}/{user_id}', 'App\Http\Controllers\MovieController@addreview');
-Route::post('/contactUs/{user_id}', 'App\Http\Controllers\UserController@addfeedback');
-// Route::get('/contactUs', function(){
-//     return view('contactUs');
-// });
+Route::post('/{user_id}/contactUs', 'App\Http\Controllers\UserController@addfeedback');
+Route::get('/{user_id}/contactUs', 'App\Http\Controllers\UserController@contactus');
 
 Route::get('layout', function(){
     return view('layouts.layout');

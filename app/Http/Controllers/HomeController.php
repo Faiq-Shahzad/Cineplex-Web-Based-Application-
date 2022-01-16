@@ -39,10 +39,10 @@ class HomeController extends Controller
 
         }
 
-        foreach ($screen as $s) {
+        // foreach ($screen as $s) {
             
-            print_r($s);
-        }
+        //     print_r($s);
+        // }
 
     
 
@@ -68,10 +68,10 @@ class HomeController extends Controller
 
         }
 
-        foreach ($screen as $s) {
+        // foreach ($screen as $s) {
             
-            print_r($s);
-        }
+        //     print_r($s);
+        // }
 
     
 

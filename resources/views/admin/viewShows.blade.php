@@ -64,6 +64,7 @@
 
         #phn_table{
             display: block;
+            width: 100%;
         }
     }
 
