@@ -79,12 +79,7 @@
             @foreach ($feedbacks as $items)
                 <tr>
                     <td>{{ $items->id }}</td>
-                    @foreach ($user as $u)
-                        @if ($u->id == $items->user_id)
-                            <td>{{ $u->user_name }}</td>     
-                        @endif
-                           
-                    @endforeach 
+                    <td>{{ $items->user_name }}</td>
                     <td>{{ $items->user_feedback }}</td>
             @endforeach
         </tbody>

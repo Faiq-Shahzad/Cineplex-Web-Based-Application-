@@ -31,8 +31,7 @@ class UserController extends Controller
     }
     public function feedbacks(){
         $feedbacks = Feedbacks::all();
-        $user = User::all();
-        return view('/admin/feedback', compact('feedbacks', 'user'));
+        return view('/admin/feedback', compact('feedbacks'));
     }
 
     public function addfeedback(Request $request, $user_id){
