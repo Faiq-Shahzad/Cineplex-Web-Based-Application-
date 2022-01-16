@@ -1,6 +1,9 @@
 @extends('layouts.layout')
 
-@section('title') Cineplex - Home @endsection
+@section('title') 
+Cineplex - Home 
+
+@endsection
 
 <style>
     .alert{
@@ -64,7 +67,7 @@
         }
     }
 
-    </style>
+</style>
 
 
 
