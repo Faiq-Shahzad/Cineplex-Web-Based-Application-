@@ -2,8 +2,8 @@
 
 
 @section('title') Movie - Book Tickets @endsection
-<head>
 
+@section('style')
 
 <style>
 
@@ -65,6 +65,8 @@
 
 
 </style>
+
+@endsection
 
 @section('content')
 

@@ -2,36 +2,40 @@
 
 @section('title') All Movie @endsection
 
-    <style>
-        h1{
-            color: white;
-            border-bottom: 4px solid red;
-            font-weight: bold !important;
-            text-align: center;
-            width: 30%;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 2% !important;
-        }
+@section('style')
 
-        .card:hover{
-            transition: transform .4s;
-            transform: scale(1.1);
-        }
+<style>
+    h1{
+        color: white;
+        border-bottom: 4px solid red;
+        font-weight: bold !important;
+        text-align: center;
+        width: 30%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2% !important;
+    }
 
-        .container{
-            width: 70%;
-        }
+    .card:hover{
+        transition: transform .4s;
+        transform: scale(1.1);
+    }
 
-        .card a{
-            text-decoration: none;
-            color: white;
-        }
+    .container{
+        width: 70%;
+    }
 
-        .card a:hover{
-            color: white;
-        }
-    </style>
+    .card a{
+        text-decoration: none;
+        color: white;
+    }
+
+    .card a:hover{
+        color: white;
+    }
+</style>
+
+@endsection
 
 @section('content')
 

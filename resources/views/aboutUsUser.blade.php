@@ -2,6 +2,7 @@
 
 @section('title') Cineplex - About Us @endsection
 
+@section('style')
 
 <style>
 
@@ -96,6 +97,8 @@
     }
 
 </style>
+
+@endsection
 
 @section('content')
 
