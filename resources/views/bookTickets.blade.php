@@ -55,6 +55,11 @@
         table{
             color: white !important;
         }
+
+        table input{
+            color: white;
+            font-weight: bold;
+        }
     }
 
     @media(max-width: 767px){
@@ -94,10 +99,10 @@
                 <tr>
                     <td scope="row">E-Standard</td>
                     <td>1000</td>
-                    <td id="minus"><i class="fas fa-minus-circle"></i></td>
-                    <td><input type="number" name="no_of_seats" min="1" max="10"></td>
-                    <td id="plus"><i class="fas fa-plus-circle"></i></td>
-                    <td><input type="number" disabled></td>
+                    <td id="minus" class="updown"><i class="fas fa-minus-circle"></i></td>
+                    <td><input type="number" name="no_of_seats" id="seats" min="1" max="10" value="1" disabled></td>
+                    <td id="plus" class="updown"><i class="fas fa-plus-circle"></i></td>
+                    <td><input type="number" id="subtotal" value="1000" disabled></td>
                 </tr>
                 <tr>
                     <td scope="row">GST</td>
@@ -113,42 +118,75 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
+                    <td><input type="number" id="total" value="1050" disabled></td>
                 </tr>
                 </tbody>
               </table>
 
-            {{-- <table cellspacing="2">
-                <thead>
-                    <th>Tickets</th>
-                    <th>Cost (PKR)</th>
-                    <th></th>
-                    <th>Quantity</th>
-                    <th></th>
-                    <th>Subtotal</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>E-Standard</td>
-                        <td>1000</td>
-                        <td><i class="fas fa-minus-circle"></i></td>
-                        <td><input type="number" name="no_of_seats" min="1" max="10"></td>
-                        <td><i class="fas fa-plus-circle"></i></td>
-                        <td><input type="number" disabled></td>
-
-                    </tr>
-                </tbody>
-            </table>
-            
-            <div class="row">
-                <label>Tickets</label>
-                <textarea name="movie_review" id="" cols="89" rows="5" placeholder="Review...."></textarea><br>
-            </div> --}}
             <div class="row">
                 <button type="submit" class="btn btn-success">Book Ticket</button> 
             </div>
             
         </form>
     </div>
+    
+@endsection
+
+@section('scripts')
+    <script>
+        $(document).ready(function () {
+            $('#plus').click(function (e) { 
+                e.preventDefault();
+                var quantity = $('#seats').val();
+                var total = quantity*1000;
+                if ( quantity<10 ){
+                    quantity++;
+                    $('#seats').val(quantity);
+                }     
+            });
+
+            $('#minus').click(function (e) { 
+                e.preventDefault();
+                var quantity = $('#seats').val();
+                var total = quantity*1000;
+                if ( quantity>1 ){
+                    quantity--;
+                    $('#seats').val(quantity);
+                }     
+            });
+
+            $('.updown').click(function (e) { 
+                e.preventDefault();
+
+                var price = 1000;
+                var seats = $('#seats').val();
+
+                $('#subtotal').val(price*seats);
+                $('#total').val(price*seats+50);
+
+
+                console.log(seats);
+                
+            });
+
+            // $('#seats').on('change', function () {
+            //     var price = 1000;
+            //     var seats = $('#seats').val();
+
+            //     console.log(seats);
+                
+            // });
+
+            
+
+            // public function valuechange(){
+            //     var price = 1000;
+            //     var seats = $('#seats').val();
+
+            //     console.log(seats);
+            // }
+        });
+    </script>
+    
     
 @endsection

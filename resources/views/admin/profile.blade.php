@@ -68,7 +68,7 @@
         @csrf
         
         <div class="row">
-            <label class="offset-xl-4 col-xl-1 offset-2 col-3">User ID:</label>
+            <label class="offset-xl-3 col-xl-1 offset-2 col-3">User ID:</label>
             <input type="text" class="col-xl-3 offset-1 col-4" value= '{{$user->id}}' disabled>
         </div>
         <div class="row">
