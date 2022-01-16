@@ -80,7 +80,13 @@
                 background-color: rgba(233, 20, 20, 0.795);
             }
 
+            footer a{
+                color: greenyellow;
+                text-decoration: none;
+            }
+
             footer a:hover{
+                color: red;
                 text-decoration: underline;
             }
 
@@ -96,6 +102,17 @@
             .navbar-nav .active:hover{
                 font-weight: bold;
                 text-decoration: underline black;
+            }
+
+            .icons a{
+                color: white !important;
+                font-size: 20px;
+            }
+
+            .icons .fab:hover{
+                color: red;
+                transition: transform .4s;
+                transform: scale(1.5);
             }
         }
 
@@ -225,16 +242,22 @@
                 <a href="/home">FAQs</a>
             </div>
         </div>
+        <br>
 
         <div class="row">
             <div class="col-lg-2 offset-lg-9 col-4 offset-4 about">
-                <a href="https://github.com/Faiq-Shahzad">GitHub</a>
+                <strong>Social Media</strong> 
+                
             </div>
         </div>
 
         <div class="row">
-            <div class="col-lg-2 offset-lg-9 col-4 offset-4 about">
-                <a href="https://www.linkedin.com/in/faiqshahzad993/">Linkedin</a>
+            <div class="col-lg-2 offset-lg-9 col-4 offset-4 about icons">
+                <a href="https://github.com/Faiq-Shahzad"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/faiqshahzad993/"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.facebook.com/faiq.shahzad.75"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/faiq_shah_021/"><i class="fab fa-instagram"></i></a>
+                <a href=""><i class="fab fa-twitter"></i></a>
             </div>
         </div>
         
