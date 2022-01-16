@@ -42,6 +42,7 @@ Route::middleware(['auth', 'chkAdmin'])-> group(function(){
 
     Route::get('/admin/{id}/profile', 'App\Http\Controllers\UserController@viewprofile');
     Route::get('/admin/users', 'App\Http\Controllers\UserController@show');
+    Route::get('/admin/users', 'App\Http\Controllers\UserController@feedbacks');
 
     Route::get('/admin/aboutUs', function(){
         return view('admin.aboutUs');
@@ -56,6 +57,7 @@ Route::middleware(['auth', 'chkAdmin'])-> group(function(){
     Route::get('/admin/movieDetails/{id}', 'App\Http\Controllers\MovieController@adminmoviedetails');
     Route::post('/admin/movieDetails/{id}/{user_id}', 'App\Http\Controllers\MovieController@adminaddreview');
     Route::get('/admin/bookTickets/{id}', 'App\Http\Controllers\TicketController@adminbookticket');
+
 
     
 

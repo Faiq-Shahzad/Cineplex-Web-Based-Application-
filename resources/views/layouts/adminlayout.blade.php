@@ -183,7 +183,7 @@
 
                     <li class="nav-item"><a class="nav-link {{ Request::is('admin/users') ? "active" :"" }}" href="/admin/users">Users</a></li>
                     <li class="nav-item"><a class="nav-link {{ Request::is('admin/aboutUs') ? "active" :"" }}" href="/admin/aboutUs">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link {{ Request::is('admin/contactUs') ? "active" :"" }}" href="/contactUs">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link {{ Request::is('admin/feedbacks') ? "active" :"" }}" href="/admin/feedbacks">Feedbacks</a></li>
 
                     <!-- Authentication Links -->
                     @guest
