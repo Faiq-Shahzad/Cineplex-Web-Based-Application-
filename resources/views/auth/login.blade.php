@@ -113,8 +113,6 @@
             </div>
 
             <div class="row form-group">
-                {{-- <a class="col-lg-4 offset-lg-8 col-5 offset-7 col-form-label" href="">Forgot Password?</a> --}}
-    
             </div>
     
             <button type="submit" class="btn btn-success col-lg-4 offset-lg-4 col-12">Login </button>
