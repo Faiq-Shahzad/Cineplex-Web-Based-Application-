@@ -17,7 +17,43 @@ class MovieController extends Controller
 
     public function show(){
         $movielist = Movies::all();
-        return view('admin.viewMovies', compact('movielist'));
+        return view('admin.viewMovies');
+    }
+
+    public function search(Request $request){
+
+        if ($request->ajax()){
+            $query = $request->get('query');
+            if ($query != ''){
+                $data = Movies::where('movie_name', 'LIKE', '%'.$query.'%')->get();
+            }else{
+                $data = Movies::all();
+            }
+
+        }
+
+        $output = '';
+        $coverurl = asset('covers/');
+        foreach($data as $movie){
+            $output.='
+            <tr>
+                <td>'.$movie->id.'</td>
+                <td>'.$movie->movie_name.'</td>
+                <td>'.$movie->ratings.'</td>
+                <td>'.$movie->year.'</td>
+                <td><img src="'.$coverurl.'/'.$movie->movie_cover.'" alt=""></td>
+                <td><a href="/admin/'.$movie->id.'/edit"><i class="fas fa-edit"></i></a>&emsp;
+                    <a href="/admin/'.$movie->id.'/delete"><i class="fas fa-trash-alt"></i></a>&emsp;
+                    <a href="/admin/'.$movie->id.'/review">Reviews</a>
+                    <a href="/admin/'.$movie->id.'/show">Screen</a>
+                </td>
+            </tr>';
+        }
+
+        // return response($json_encode($output));
+        return response()->json(['data'=>$output]);
+
+        // return view('admin.viewMovies');
     }
 
     public function addMovie(Request $request){

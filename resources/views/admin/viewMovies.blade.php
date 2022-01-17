@@ -55,6 +55,22 @@
         #phn_table{
             display: none;
         }
+
+        label{
+            color: white;
+            font-weight: bold;
+        }
+
+        .search{
+            margin-left: auto;
+            margin-right: auto;
+            width: 30%;
+            margin-top: 2%;
+        }
+
+        #search{
+            width: 60%;
+        }
     }
 
     @media(max-width: 450px){
@@ -79,6 +95,11 @@
     </div>
     @endif
 
+    <div class="search">
+        <label for="">Search: </label>
+        <input type="search" name="searchbar" id="search" placeholder="Search By Movie Name">
+    </div>
+
     <h1>Movies</h1>
     <hr>
 
@@ -94,7 +115,7 @@
         </tr>
         </thead>
         <tbody>
-            @foreach ($movielist as $movie)
+            {{-- @foreach ($movielist as $movie)
                 <tr>
                     <td>{{ $movie->id }}</td>
                     <td>{{ $movie->movie_name }}</td>
@@ -105,7 +126,7 @@
                         <a href="/admin/{{$movie->id}}/delete"><i class="fas fa-trash-alt"></i></a>&emsp;
                         <a href="/admin/{{$movie->id}}/review">Reviews</a>
                         <a href="/admin/{{$movie->id}}/show">Screen</a></td>
-            @endforeach
+            @endforeach --}}
         </tbody>
     </table>
 
@@ -119,7 +140,7 @@
         </tr>
         </thead>
         <tbody>
-            @foreach ($movielist as $movie)
+            {{-- @foreach ($movielist as $movie)
                 <tr>
                     <td>{{ $movie->id }}</td>
                     <td>{{ $movie->movie_name }}</td>
@@ -129,15 +150,44 @@
                         <a href="/admin/{{$movie->id}}/review">Reviews</a>
                         <a href="/admin/{{$movie->id}}/show">Screen</a>
                     </td>
-            @endforeach
+            @endforeach --}}
         </tbody>
     </table>
     
     
 @endsection
 
+@section('script')
+    
 <script>
+
+    function getMovies(query=''){
+        $.ajax({
+            type: "get",
+            url: "getMovies",
+            data: { query:query },
+            dataType: "json",
+            success: function (response) {
+                $('tbody').html(response.data);
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        getMovies();
+
+        $(document).on('keyup', '#search', function () {
+            var query = $('#search').val();
+            $('tbody').html('');
+            getMovies(query);
+        });
+        
+    });
+
     setTimeout(function(){
         $('.alert').slideUp(1500);
     }, 2000);
+
 </script>
+
+@endsection

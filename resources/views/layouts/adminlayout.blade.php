@@ -267,6 +267,8 @@
 <!-- Scripts -->
 <script src="{{ asset('frontend/bootstrap.bundle.min.js') }}" defer></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+@yield('script')
     
 </body>
 </html>
