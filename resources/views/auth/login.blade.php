@@ -113,7 +113,7 @@
             </div>
 
             <div class="row form-group">
-                <a class="col-lg-4 offset-lg-8 col-5 offset-7 col-form-label" href="">Forgot Password?</a>
+                {{-- <a class="col-lg-4 offset-lg-8 col-5 offset-7 col-form-label" href="">Forgot Password?</a> --}}
     
             </div>
     
