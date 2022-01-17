@@ -57,6 +57,10 @@
         text-align: center;
     }
 
+    footer{
+        margin-top: 24%;
+    }
+
 </style>
 
 @endsection

@@ -40,6 +40,10 @@
         td{
             text-align: center;
         }
+
+        footer{
+            margin-top: 20%;
+        }
     }
 
     @media(max-width: 767px){

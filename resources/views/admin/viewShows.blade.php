@@ -55,6 +55,10 @@
         #phn_table{
             display: none;
         }
+
+        footer{
+            margin-top: 24%;
+        }
     }
 
     @media(max-width: 450px){
