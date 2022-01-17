@@ -33,13 +33,6 @@ class TicketController extends Controller{
 
         $newseats = $remainingseats - $seats;
 
-        // print_r(" remainingseats");
-        // print_r ($remainingseats);
-        // print_r(" seats");
-        // print_r ($seats);
-        // print_r(" newseats");
-        // print_r ($newseats);
-
         $ticket->user_id = $id;
         $ticket->movie_id = $m_id;
         $ticket->no_of_seats = $seats; 

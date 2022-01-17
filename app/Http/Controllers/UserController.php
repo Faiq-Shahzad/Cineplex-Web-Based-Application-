@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Tickets;
 use App\Models\Feedbacks;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -21,13 +22,17 @@ class UserController extends Controller
     public function viewprofile($id){
 
         $user = User::find($id);
-        return view('/admin/profile', compact('user'));
+        $tickets = Tickets::where('user_id', $id)->get();
+
+        return view('/admin/profile', compact('user', 'tickets'));
     }
 
     public function userviewprofile($id){
 
         $user = User::find($id);
-        return view('/profile', compact('user'));
+        $tickets = Tickets::where('user_id', $id)->get();
+
+        return view('/profile', compact('user', 'tickets'));
     }
     public function feedbacks(){
         $feedbacks = Feedbacks::all();
