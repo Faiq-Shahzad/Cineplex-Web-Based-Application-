@@ -1,6 +1,10 @@
 # Cineplex
 A Responsive Web Cinema Application With Database:
 
+
+https://github.com/Faiq-Shahzad/Cineplex-Web-Based-Application-/assets/85623366/00cb4b7a-cf10-4601-ace7-14c7fd91f54d
+
+
 <h3>Tools and Technologies:</h3>
 
 <b>Tools</b>:
